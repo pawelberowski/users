@@ -1,10 +1,10 @@
 import './styles/styles.scss';
 import { getUsersData } from './getUsersData';
 import { getCompaniesData } from './getCompaniesData';
+import { renderUserData } from './renderUserData';
 
 window.onload = () => {
-  const heading = document.querySelector('.heading');
-  heading.textContent = "It's working!";
+  renderUserData();
 };
 
 getUsersData().then((data) => console.log(data));
