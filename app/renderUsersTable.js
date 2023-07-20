@@ -1,6 +1,6 @@
 import { getUsersData } from './getUsersData';
 import { getUserRow } from './getUserRow';
-import { createUsersTable } from './styles/createUsersTable';
+import { createUsersTable } from './createUsersTable';
 
 export function renderUsersTable() {
   const wrapper = document.querySelector('.wrapper');
