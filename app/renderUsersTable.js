@@ -12,6 +12,7 @@ export function renderUsersTable() {
   getUsersData().then((users) => {
     users.forEach(function ({ name, email }) {
       const row = getUserRow(name, email);
+      row.scope = 'row';
       usersTable.querySelector('tbody').append(row);
     });
   });

@@ -8,7 +8,9 @@ export function createUsersTable() {
 
   usersTable.classList.add('table');
   nameHeader.innerText = 'User Name';
+  nameHeader.scope = 'col';
   emailHeader.innerText = 'email';
+  emailHeader.scope = 'col';
   firstRow.append(nameHeader, emailHeader);
   tableHead.append(firstRow);
   usersTable.append(tableHead, tableBody);
