@@ -1,7 +1,9 @@
 export function getUserRow(name, email) {
-  const row = document.createElement('div');
-  const paragraph = document.createElement('p');
-  paragraph.innerText = `name: ${name} email: ${email} `;
-  row.append(paragraph);
+  const row = document.createElement('tr');
+  const nameData = document.createElement('td');
+  const emailData = document.createElement('td');
+  nameData.innerText = `${name}`;
+  emailData.innerText = `${email}`;
+  row.append(nameData, emailData);
   return row;
 }

@@ -1,11 +1,10 @@
 import './styles/styles.scss';
 import { getUsersData } from './getUsersData';
 import { getCompaniesData } from './getCompaniesData';
-import { renderUserData } from './renderUserData';
+import { renderUsersTable } from './renderUsersTable';
 
 window.onload = () => {
-  renderUserData();
+  renderUsersTable();
 };
-
 getUsersData().then((data) => console.log(data));
 getCompaniesData().then((data) => console.log(data));
