@@ -1,32 +1,18 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 import { getUsersData } from './getUsersData';
 import { getCompaniesData } from './getCompaniesData';
 import { renderUsersTable } from './renderUsersTable';
 import { renderCompaniesTable } from './renderCompaniesTable';
+import { assignUsersToCompanies } from './assignUsersToCompanies';
 
 window.onload = () => {
   renderUsersTable();
   renderCompaniesTable();
 };
-getUsersData().then((data) => console.log(data));
-getCompaniesData().then((data) => console.log(data));
+getCompaniesData().then(function (companies) {
+  getUsersData().then(function (users) {
+    assignUsersToCompanies(companies, users);
+  });
+});
 
-const list = [
-  {
-    name: 'company1',
-    users: [
-      {
-        name: 'user1',
-        email: 'smy@smth.com',
-      },
-      {
-        name: 'user44',
-        email: 'a@b.com',
-      },
-      {
-        name: 'anotheruser',
-        email: 'any@here.com',
-      },
-    ],
-  },
-];
