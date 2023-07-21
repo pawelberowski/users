@@ -11,23 +11,22 @@ window.onload = () => {
 getUsersData().then((data) => console.log(data));
 getCompaniesData().then((data) => console.log(data));
 
-
 const list = [
   {
     name: 'company1',
     users: [
       {
         name: 'user1',
-        email: 'smy@smth.com'
+        email: 'smy@smth.com',
       },
       {
         name: 'user44',
-        email: 'a@b.com'
+        email: 'a@b.com',
       },
       {
         name: 'anotheruser',
-        email: 'any@here.com'
-      }
-    ]
-  }
+        email: 'any@here.com',
+      },
+    ],
+  },
 ];
