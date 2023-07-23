@@ -10,9 +10,6 @@ window.onload = () => {
   renderUsersTable();
   renderCompaniesTable();
 };
-getCompaniesData().then(function (companies) {
-  getUsersData().then(function (users) {
-    assignUsersToCompanies(companies, users);
-  });
+Promise.all([getCompaniesData(), getUsersData()]).then(([companies, users]) => {
+  console.log(assignUsersToCompanies(companies, users));
 });
-
