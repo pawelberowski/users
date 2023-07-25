@@ -1,8 +1,16 @@
+import { getExpandButton } from './getExpandButton';
+
 export function getTableRow(companyObject) {
   const row = document.createElement('tr');
   const companyCell = document.createElement('td');
   const usersCell = document.createElement('td');
   const usersList = document.createElement('ol');
+  const numberOfUsers = companyObject.users?.length || 0;
+  const expandButton = getExpandButton(numberOfUsers);
+
+  if (expandButton) {
+    usersCell.append(expandButton);
+  }
 
   usersCell.append(usersList);
   companyObject.users?.forEach((user) => {
@@ -12,7 +20,7 @@ export function getTableRow(companyObject) {
   });
 
   companyCell.innerText = `${companyObject.name}`;
-  usersList.title = `${companyObject.users?.length || 0}`;
+  usersList.title = numberOfUsers;
   row.append(companyCell, usersCell);
   return row;
 }
