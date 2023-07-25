@@ -1,3 +1,5 @@
+import { addEventListenerToButton } from './addEventListenerToButton';
+
 export function getExpandButton(numberOfUsers, usersList) {
   if (numberOfUsers === 0) {
     return null;
@@ -6,9 +8,7 @@ export function getExpandButton(numberOfUsers, usersList) {
   expandButton.classList.add('btn', 'btn-primary');
   expandButton.innerText = `Expand ${numberOfUsers} users`;
 
-  expandButton.addEventListener('click', function () {
-    usersList.classList.remove('hidden');
-  });
+  addEventListenerToButton(expandButton, usersList, numberOfUsers);
 
   return expandButton;
 }
