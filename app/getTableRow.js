@@ -6,7 +6,9 @@ export function getTableRow(companyObject) {
   const usersCell = document.createElement('td');
   const usersList = document.createElement('ol');
   const numberOfUsers = companyObject.users?.length || 0;
-  const expandButton = getExpandButton(numberOfUsers);
+  const expandButton = getExpandButton(numberOfUsers, usersList);
+
+  usersList.classList.add('hidden');
 
   if (expandButton) {
     usersCell.append(expandButton);
