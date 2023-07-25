@@ -13,6 +13,12 @@ export function renderTable() {
   Promise.all([getCompaniesData(), getUsersData()]).then(
     ([companies, users]) => {
       const tableData = assignUsersToCompanies(companies, users);
+
+      tableData.sort((firstCompany, secondCompany) => {
+        const numberOfFirstCompanyUsers = firstCompany.users?.length || 0;
+        const numberOfSecondCompanyUsers = secondCompany.users?.length || 0;
+        return numberOfFirstCompanyUsers - numberOfSecondCompanyUsers;
+      });
       tableData.forEach((element) => {
         const row = getTableRow(element);
         table.querySelector('tbody').append(row);
