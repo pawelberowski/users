@@ -6,7 +6,7 @@ export function getExpandButton(numberOfUsers, usersList) {
   }
   const expandButton = document.createElement('button');
   expandButton.classList.add('btn', 'btn-primary');
-  expandButton.innerText = `Expand ${numberOfUsers} users`;
+  expandButton.innerText = `Expand ${numberOfUsers} user${numberOfUsers > 1 ? 's' : ''}`;
 
   addEventListenerToButton(expandButton, usersList, numberOfUsers);
 
